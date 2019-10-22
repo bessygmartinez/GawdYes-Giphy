@@ -11,13 +11,50 @@
     <meta property="ogi:url" content="http://bessygmartinez.github.io/TriviaGame"/>
     <meta property="og:type" content="game"/>
     <link rel="icon" href="assets/images/lips_favicon.png" type="image/gif" sizes="32x32">
+    <script src="https://kit.fontawesome.com/bcab66c784.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Limelight|Nova+Mono|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Yas, Gawd - A RuPaul's Drag Race Gif Generator</title>
 </head>
-<body>
+<body class="m-0 b-0">
+    <div class="container mt-3 hotpink-bg">
+        <div class="row m-0 text-center p-3">
+            <div class="col">
+                <p class="display-1 title">Yas, Gawd!</p>
+                <h1 class="subtitle">A RuPaul's Drag Race Gif Generator <i class="fas fa-grin-tongue-wink"></i></h1>
+                <p>Powered by <a href="https://giphy.com/" target="_blank" class="text-warning">Giphy</a></p>
+            </div>
+        </div>
+
+        <div class="row mt-3 text-center">
+            <div class="col p-3">
+                <p>Click on a button to generate some gifs.</p>
+                <div id="gif-buttons p-3">
+                    Buttons go here.
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 text-center">
+            <div class="col p-3">
+                <p>Add your own queen or catchphrase to generate a gif button below:</p>
+                <form id="gif-form">
+                    <input type="text" class="gif-input">
+                    <input type="submit" value="Come Through!" class="add-gif btn btn-warning">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col gif-div m-3 p-3 hotpink2-bg">
+                Gifs go here
+            </div>
+        </div>
+
+    </div>
     
 </body>
 </html>
