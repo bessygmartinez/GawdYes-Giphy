@@ -9,28 +9,38 @@ function displayGif() {
 $.ajax({
     url: queryURL,
     method: "GET"
-}).then(function(response) {
+})
+
+.then(function(response) {
     $("#gif-div").empty();
 
     for (let i = 0; i < response.data.length; i++) {
         let gifDiv     = $("<div class='gif-div m-2'>");
-        let rating     = response.data[i].rating;
+        let rating     = String.prototype.toUpperCase.call({
+            toString: function toString () {
+                return response.data[i].rating;
+            }
+        });
         let ratingDiv  = $('<p>').html("Rating: " + rating);
         let animated   = response.data[i].images.fixed_height.url;
         let still      = response.data[i].images.fixed_height_still.url;
         let gifImg     = $("<img class='gif img-fluid'>");
 
-
         gifImg.attr('src', still);
         gifImg.attr('data-still', still);
         gifImg.attr('data-animate', animated);
-        gifImg.attr('data-state', 'still')
+        gifImg.attr('data-state', 'still');
 
         gifDiv.append(ratingDiv);
         gifDiv.prepend(gifImg);
         $("#gif-div").prepend(gifDiv);
     }
+    
+        let gifIns = $("<p><strong>Click on gifs to animate/pause.</strong></p>");
+        $("#gif-div").prepend(gifIns);
 });
+
+
 };
 
 $("#gif-div").on("click", ".gif", function(){
